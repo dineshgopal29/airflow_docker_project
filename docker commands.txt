@@ -9,7 +9,7 @@ docker run -d -p 8080:8080 puckel/docker-airflow webserver
 
 Stop container
 docker stop my_container
-docker stop b9cd1fe28e90
+docker stop f42a7141083c
 
 http://localhost:8080/admin/
 
@@ -18,7 +18,7 @@ docker ps
 
 You can jump into your running container’s command line using the command:
 docker exec -ti <container name> bash
-docker exec -ti b9cd1fe28e90 bash
+docker exec -ti f42a7141083c bash
 
 Mount local folder to docker image
 docker run -d -p 8080:8080 -v /path/to/dags/on/your/local/machine/:/usr/local/airflow/dags  puckel/docker-airflow webserver
