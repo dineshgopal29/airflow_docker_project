@@ -1,0 +1,33 @@
+#To pull a docker image from Docker Hub
+docker pull puckel/docker-airflow
+
+#To view all images
+docker images
+
+create a running container with the following command:
+docker run -d -p 8080:8080 puckel/docker-airflow webserver
+
+Stop container
+docker stop my_container
+docker stop b9cd1fe28e90
+
+http://localhost:8080/admin/
+
+Get Container ID
+docker ps
+
+You can jump into your running container’s command line using the command:
+docker exec -ti <container name> bash
+docker exec -ti b9cd1fe28e90 bash
+
+Mount local folder to docker image
+docker run -d -p 8080:8080 -v /path/to/dags/on/your/local/machine/:/usr/local/airflow/dags  puckel/docker-airflow webserver
+
+docker run -d -p 8080:8080 -v /Users/dinesh/Documents/Github_Projects/airflow_docker_project/docker_base_vol/:/usr/local/airflow/dags  puckel/docker-airflow webserver
+
+List all DAG files in the container
+
+Log into the container 
+docker exec -ti b9cd1fe28e90 bash
+
+airflow list_dags
